@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>Random Quotes Generator</title>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"> </script>
+        <style>
+            body {
+                text-align: center;
+                background-color:lightgray;
+              }
+
+           /* #particles {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                background-color: lightgray;}  */
+
+            #quote-container {
+              width: 50%;
+              height: 20%;
+              margin: 0 auto;
+              border: 5px solid rgb(10, 6, 6);
+              padding: 20px;
+              text-align: center;
+              background-color:cornflowerblue
+            }
+        
+            #quotes {
+              margin: 0;
+              font-size: 40px;
+            }
+
+            #title {
+                color:brown;
+            }
+        
+            #clickme {
+              display: block;
+              margin: 0 auto;
+              color: black;
+              border: 2px solid;
+              background-color: cornflowerblue;
+              width: 100px;
+              height: 50px;
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            
+          </style>
+    </head>
+    <body>
+        <h1 id = "title" style="font-weight: bold;">Random Quotes Generator</h1>
+        <h4>Click Button to Generate Random Quotes</h4><br><br><br>
+        <button id = "clickme" >Generate</button>
+        <br><br><br>
+        <div id = "quote-container">
+            <p id  = "quotes"></p>
+        </div>   
+        <div id="particles"></div>
+        <script>
+            //tsParticles.load("particles", {
+             //   particles: {
+                  // number: {
+                  //    value: 500
+                  // },
+               //    move: {
+               //       enable: true
+               //    },
+               //    color: {
+               //       value: "#272701"
+               //    },
+               //    shape: {
+               //     type: "polygon"
+               //    },
+                 //  line_linked: {
+                   // enable: true,
+                    //color: "#272701",
+                    //opacity: 0.4
+              //    },
+                  
+              //  }
+            // });
+        </script>
+      
+            
+    </body>
+        <script>
+        // function to generate random quotes
+        function quotes_generator(){
+
+            var quotes = ["Success is not final; failure is not fatal: It is the courage to continue that counts.",
+                        "Don’t let yesterday take up too much of today.",
+                        "If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you.",
+                        "When we strive to become better than we are, everything around us becomes better too.",
+                        "We don’t just sit around and wait for other people. We just make, and we do.",
+                        "One man with courage makes a majority.",
+                        "The successful man will profit from his mistakes and try again in a different way.",
+                        "The most difficult thing is the decision to act, the rest is merely tenacity.",
+                        "Talent wins games, but teamwork and intelligence win championships.",
+                        "Coming together is a beginning. Keeping together is progress. Working together is success.",
+                        "I invite everyone to choose forgiveness rather than division, teamwork over personal ambition.",
+                        "Don't let someone else's opinion of you become your reality.",
+                        "When you arise in the morning think of what a privilege it is to be alive, to think, to enjoy, to love…"];
+            
+            var quotes_length = quotes.length;
+            
+            var randomer = Math.floor(Math.random() * quotes_length);
+            
+            return quotes[randomer];
+            
+            }
+
+            // function to initialize random quotes generator
+            const gen_quotes = () =>{
+                document
+                .getElementById("quotes")
+                .innerHTML = quotes_generator();
+             }
+  
+
+            // function to activate random quotes generator
+            document
+             .getElementById("clickme")
+             .addEventListener("click", gen_quotes);
+                
+              
+                      
+              
+    </script>
+</html>
